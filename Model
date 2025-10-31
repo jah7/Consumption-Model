@@ -1,0 +1,64 @@
+import matplotlib.pyplot as plt
+from scipy import optimize
+import numpy as np
+
+# Model Parameters:
+T = 31            # Number of Periods
+p = 1             # Price
+delta = 0.1       # Depreciation
+fixedCost = 0.25  # Fixed Cost
+
+#  Ss Bounds
+func = lambda x: np.log((1-delta)*x) - np.log(1/p) + 1 - (p*(1-delta)*x) + fixedCost   
+ssLow = optimize.bisect(func, 0.0000001, 1/(p*(1-delta)))
+ssHigh = optimize.bisect(func, 1/(p*(1-delta)), 100)
+
+# Initial Values
+CInit = 1/p
+XInit = 0  
+
+# Model Initialization
+C = np.zeros(T)
+X = np.zeros(T)
+time = np.zeros(T)
+
+# Model Simulation
+C[0] = CInit
+X[0] = XInit
+time[0] = 0
+
+for t in range(0, T-1):
+    if ssLow <= C[t] <= ssHigh:
+        C[t+1] = (1-delta)*C[t]
+        X[t+1] = 0
+    else:
+        C[t+1] = 1/p
+        X[t+1] = (1/p) - ((1-delta)*C[t])
+        
+    time[t+1] = time[t] + 1
+
+# Plot Results
+fig, ax = plt.subplots(1, 2, figsize = (12, 6))
+
+# Plot Data
+ax[0].plot(time, C, marker = 'o', c = 'b')
+ax[0].grid(True)
+ax[0].set_xlim([0,30])
+ax[0].set_ylim([0,1.5])
+
+ax[0].set_title("Consumption over time")
+ax[0].set_xlabel("Periods")
+ax[0].set_ylabel("Consumption")
+
+# Plot Data
+ax[1].plot(time, X, marker = 'o', c = 'r')
+ax[1].grid(True)
+ax[1].set_xlim([0,30])
+ax[1].set_ylim([-0.1,1])
+
+ax[1].set_title("Spending over time")
+ax[1].set_xlabel("Periods")
+ax[1].set_ylabel("Spending")
+
+# Show figure
+fig.show()
