@@ -14,18 +14,13 @@ This README documents the model, the math, how to run the code, and how to expor
 
 # Model equations (math)
 Let:
-    1. (C_t) be consumption at time (t),
 
-    2. (X_t) be spending at time (t),
-
-    3. (\delta \in [0,1]) be the depreciation rate,
-
-    4. (p > 0) be a price/target parameter
-    
-    5. (ss_{Low}, ss_{High}) define the steady-state interval,
-    
-    6. (T) be the total number of discrete periods (time steps).
-
+1. \(C_t\) be consumption at time \(t\)
+2. \(X_t\) be spending at time \(t\)
+3. \(\delta \in [0,1]\) be the depreciation rate
+4. \(p > 0\) be a price/target parameter
+5. \((ss_{Low}, ss_{High})\) define the steady-state interval
+6. \(T\) be the total number of discrete periods (time steps)
 
 The update rules are:
 
