@@ -1,4 +1,6 @@
-Model Simulation
+Model Simulation:
+
+
 A minimal discrete-time model that simulates the evolution of consumption (C) and spending (X) under a threshold-based adjustment rule. This repository includes the simulation script and visualizations.
 
 Overview
