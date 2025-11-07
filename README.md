@@ -11,7 +11,7 @@ If (C_t) is outside the band, consumption is reset to a target level (1/p) and s
 This README documents the model, the math, how to run the code, and how to export results for submission or sharing.
 
 # Model equations (math)
-Let
+Let,
     1. (C_t) be consumption at time (t),
 
     2. (X_t) be spending at time (t),
