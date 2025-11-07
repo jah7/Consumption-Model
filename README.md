@@ -1,16 +1,16 @@
-##Model Simulation:
+## Model Simulation:
 
 
 A minimal discrete-time model that simulates the evolution of consumption (C) and spending (X) under a threshold-based adjustment rule. This repository includes the simulation script and visualizations.
 
-#Overview
+# Overview
 At each period the model checks whether consumption (C_t) is inside a user-defined steady-state band ([ss_{Low}, ss_{High}]).
 
 If (C_t) is inside the band, consumption decays by depreciation and no spending occurs.
 If (C_t) is outside the band, consumption is reset to a target level (1/p) and spending (X_{t+1}) equals the gap between the target and the decayed previous level.
 This README documents the model, the math, how to run the code, and how to export results for submission or sharing.
 
-#Model equations (math)
+# Model equations (math)
 Let
 
 (C_t) be consumption at time (t),
