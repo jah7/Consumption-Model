@@ -54,7 +54,9 @@ p — price/target parameter; target level is (1/p) (e.g., p = 1.25 → target =
 ssLow, ssHigh — bounds of the steady-state interval (e.g., 0.9 and 1.1)
 T — number of periods to simulate (e.g., 30)
 Example (pseudo / Python-like)
-# parameters (example)
+
+
+# Parameters (example)
 CInit = 1.0
 XInit = 0.0
 delta = 0.05
@@ -63,7 +65,7 @@ ssLow = 0.9
 ssHigh = 1.1
 T = 31
 
-# arrays (preallocate)
+# Arrays (preallocate)
 C = [0.0]*T
 X = [0.0]*T
 time = list(range(T))
