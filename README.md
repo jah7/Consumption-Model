@@ -7,11 +7,13 @@ A minimal discrete-time model that simulates the evolution of consumption (C) an
 At each period the model checks whether consumption (C_t) is inside a user-defined steady-state band ([ss_{Low}, ss_{High}]).
 
 If (C_t) is inside the band, consumption decays by depreciation and no spending occurs.
+
 If (C_t) is outside the band, consumption is reset to a target level (1/p) and spending (X_{t+1}) equals the gap between the target and the decayed previous level.
+
 This README documents the model, the math, how to run the code, and how to export results for submission or sharing.
 
 # Model equations (math)
-Let,
+Let:
     1. (C_t) be consumption at time (t),
 
     2. (X_t) be spending at time (t),
